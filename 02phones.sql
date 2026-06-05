@@ -24,3 +24,7 @@ SELECT name, price FROM phones WHERE units_sold > 5000;
 -- Select name, manufacturer for all phones by Apple & Samsung
 SELECT name, manufacturer FROM phones WHERE manufacturer IN ('Apple', 'Samsung');
 SELECT name, manufacturer FROM phones WHERE manufacturer IN ('Apple') OR manufacturer IN ('Samsung');
+
+
+-- Calculate Total Revenue in the SELECT Clause
+SELECT name, price * units_sold AS total_revenue FROM phones WHERE price * units_sold > 1000000;

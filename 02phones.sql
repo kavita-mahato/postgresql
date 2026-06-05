@@ -19,3 +19,8 @@ VALUES
 
 -- Retrive data of the revenue column
 SELECT name, price FROM phones WHERE units_sold > 5000;
+
+
+-- Select name, manufacturer for all phones by Apple & Samsung
+SELECT name, manufacturer FROM phones WHERE manufacturer IN ('Apple', 'Samsung');
+SELECT name, manufacturer FROM phones WHERE manufacturer IN ('Apple') OR manufacturer IN ('Samsung');

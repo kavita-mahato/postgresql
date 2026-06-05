@@ -62,14 +62,13 @@ SELECT name, population / area AS Density FROM cities  WHERE population / area >
 
 
 -- Updating rows
-UPDATE cities SET population = 39505000 WHERE name IN ('Tokyo');
+UPDATE cities SET population = 39505000 WHERE name = 'Tokyo';
 SELECT * FROM cities;
 
 
 -- Deleting rows
-DELETE FROM cities WHERE name IN ('Tokyo');
+DELETE FROM cities WHERE name = 'Tokyo';
 SELECT * FROM cities;
 
-DELETE FROM cities WHERE name NOT IN ('Tokyo');
+DELETE FROM cities WHERE name != 'Tokyo';
 SELECT * FROM cities;
-

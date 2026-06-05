@@ -38,3 +38,25 @@ SELECT name, population / area FROM cities;
 
 -- Create another property using existing ones
 SELECT name, population / area AS density FROM cities;
+
+
+-- Filtering rows with WHERE
+SELECT name, country FROM cities WHERE area > 4000;
+SELECT * FROM cities WHERE area = 8223;
+SELECT name, country, population / area AS density FROM cities WHERE area != 8223;
+SELECT *, population / area AS density FROM cities WHERE area <> 8223;
+
+SELECT * FROM cities WHERE area BETWEEN 2000 AND 4000;
+SELECT * FROM cities WHERE name IN ('Delhi', 'Shanghai');
+SELECT * FROM cities WHERE name NOT IN ('Delhi');
+
+
+
+-- Filter data with multiple conditions
+SELECT * FROM cities WHERE area NOT IN (3043, 8223) AND name = 'Tokyo';
+SELECT * FROM cities WHERE area NOT IN (3043, 8223) OR name IN ('Delhi');
+
+
+
+-- Calculation while filtering
+SELECT name, population / area AS Density FROM cities  WHERE population / area > 4000;

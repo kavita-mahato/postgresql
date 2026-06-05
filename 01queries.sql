@@ -59,3 +59,17 @@ SELECT * FROM cities WHERE area NOT IN (3043, 8223) OR name IN ('Delhi');
 
 -- Calculations in WHERE Clause
 SELECT name, population / area AS Density FROM cities  WHERE population / area > 4000;
+
+
+-- Updating rows
+UPDATE cities SET population = 39505000 WHERE name IN ('Tokyo');
+SELECT * FROM cities;
+
+
+-- Deleting rows
+DELETE FROM cities WHERE name IN ('Tokyo');
+SELECT * FROM cities;
+
+DELETE FROM cities WHERE name NOT IN ('Tokyo');
+SELECT * FROM cities;
+

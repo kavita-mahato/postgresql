@@ -11,3 +11,4 @@ INSERT INTO users (username)
         ('monica');
 
 SELECT * from users;
+

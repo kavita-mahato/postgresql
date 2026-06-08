@@ -1,0 +1,6 @@
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    user_id SERIAL REFERENCES users(id) ON DELETE CASCADE,
+    photo_id INTEGER REFERENCES photos(id) ON DELETE CASCADE,
+    contents VARCHAR(500)
+)

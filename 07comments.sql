@@ -110,3 +110,5 @@ VALUES
 
 
 SELECT contents, username FROM comments JOIN users ON user_id = comments.user_id;
+
+SELECT contents, url FROM comments JOIN photos ON photo_id = comments.photo_id;

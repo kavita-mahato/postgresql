@@ -116,3 +116,8 @@ SELECT contents, url FROM comments JOIN photos ON photo_id = comments.photo_id;
 SELECT comments.id, p.id
 FROM photos AS p
 JOIN comments ON p.id = comments.photo_id;
+
+SELECT url, contents
+FROM comments
+JOIN photos ON photos.id = comments.photo_id
+WHERE comments.user_id = photos.user_id;

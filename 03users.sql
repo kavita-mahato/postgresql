@@ -23,9 +23,15 @@ VALUES ('https://banner.jpg', NULL);
 
 SELECT * FROM photos;
 
+-- photos -> users
 SELECT url, username
 FROM photos
 LEFT JOIN users ON users.id = photos.user_id;
+
+-- users -> photos
+SELECT url, username
+FROM users
+LEFT JOIN photos ON photos.user_id = users.id;
 
 SELECT url, username
 FROM photos

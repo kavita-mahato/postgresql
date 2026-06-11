@@ -20,3 +20,20 @@ JOIN users ON users.id = photos.user_id;
 
 INSERT INTO photos (url, user_id)
 VALUES ('https://banner.jpg', NULL);
+
+SELECT * FROM photos;
+
+SELECT url, username
+FROM photos
+LEFT JOIN users ON users.id = photos.user_id;
+
+SELECT url, username
+FROM photos
+RIGHT JOIN users ON users.id = photos.user_id;
+
+SELECT url, username
+FROM photos
+FULL JOIN users ON users.id = photos.user_id;
+
+INSERT INTO users (username )
+VALUES ('Nicole');

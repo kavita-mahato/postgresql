@@ -22,4 +22,8 @@ VALUES
     ('The Hidden Pool', 9),
     ('Atomic Habits', 10);
 
+INSERT INTO books(title, author_id)
+VALUES
+    ('Orlando', NULL)
+
 SELECT title, name FROM books JOIN authors ON authors.id = books.author_id;

@@ -16,4 +16,19 @@ VALUES
     ('Ruskin Bond'),
     ('James Clear');
 
+INSERT INTO authors(name)
+VALUES
+    ('Ramachandra Guha')
+
 SELECT * FROM authors;
+
+-- Below two queries will have same output table
+
+SELECT title, NAME
+FROM authors
+LEFT JOIN books ON books.author_id = authors.id;
+
+SELECT title, NAME
+FROM books
+RIGHT JOIN authors ON books.author_id = authors.id;
+---------------------------------------------------

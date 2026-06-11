@@ -43,3 +43,9 @@ FULL JOIN users ON users.id = photos.user_id;
 
 INSERT INTO users (username )
 VALUES ('Nicole');
+
+-- 3 Way JOIN
+SELECT url, contents, username
+FROM comments
+JOIN photos ON photos.id = comments.photo_id
+JOIN users ON users.id = photos.user_id AND users.id = photos.user_id;

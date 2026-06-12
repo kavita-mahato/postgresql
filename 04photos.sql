@@ -30,3 +30,6 @@ VALUES
 
 
 SELECT * FROM photos;
+
+
+SELECT COUNT(*) FROM photos; -- null values not counted

@@ -69,3 +69,15 @@ FROM comments;
 
 SELECT SUM(id)
 FROM comments;
+
+SELECT user_id, MAX(id)
+FROM comments
+GROUP BY user_id;
+
+SELECT user_id, COUNT(id) AS frequency 
+FROM comments
+GROUP BY user_id;
+
+SELECT user_id, COUNT(*)
+FROM comments
+GROUP BY user_id;

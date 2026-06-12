@@ -49,3 +49,23 @@ SELECT url, contents, username
 FROM comments
 JOIN photos ON photos.id = comments.photo_id
 JOIN users ON users.id = photos.user_id AND users.id = photos.user_id;
+
+
+---------------- Picturing Group by ---------------
+SELECT user_id
+FROM comments
+GROUP BY user_id;
+
+
+---------------- Aggregate Functions ---------------
+SELECT MAX(id)
+FROM comments;
+
+SELECT MIN(id)
+FROM comments;
+
+SELECT AVG(id)
+FROM comments;
+
+SELECT SUM(id)
+FROM comments;

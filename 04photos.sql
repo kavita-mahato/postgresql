@@ -37,3 +37,10 @@ SELECT COUNT(*) FROM photos; -- null values not counted
 SELECT photo_id, COUNT(*) As no_of_comments
 FROM comments
 GROUP BY photo_id;
+
+-------------- Filtering Groups with HAVING --------------
+SELECT photo_id, COUNT(*) As no_of_comments
+FROM comments
+WHERE photo_id < 4
+GROUP BY photo_id
+HAVING COUNT(*) > 20;

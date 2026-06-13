@@ -28,6 +28,13 @@ VALUES
 
 SELECT title, name FROM books JOIN authors ON authors.id = books.author_id;
 
+-------------- Aggregate functions --------------
+
 SELECT author_id, COUNT(*) AS no_of_books
 FROM books
 GROUP BY author_id;
+
+SELECT name, COUNT(*) AS no_of_books
+FROM books
+JOIN authors ON authors.id = books.author_id
+GROUP BY authors.name;

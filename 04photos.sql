@@ -33,3 +33,7 @@ SELECT * FROM photos;
 
 
 SELECT COUNT(*) FROM photos; -- null values not counted
+
+SELECT photo_id, COUNT(*) As no_of_comments
+FROM comments
+GROUP BY photo_id;

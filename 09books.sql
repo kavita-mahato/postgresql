@@ -27,3 +27,7 @@ VALUES
     ('Orlando', NULL)
 
 SELECT title, name FROM books JOIN authors ON authors.id = books.author_id;
+
+SELECT author_id, COUNT(*) AS no_of_books
+FROM books
+GROUP BY author_id;

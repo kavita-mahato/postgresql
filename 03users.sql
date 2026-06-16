@@ -81,3 +81,10 @@ GROUP BY user_id;
 SELECT user_id, COUNT(*)
 FROM comments
 GROUP BY user_id;
+
+---------------- Filtering ----------------
+SELECT user_id, COUNT(*)
+FROM comments
+WHERE photo_id < 50
+GROUP BY user_id
+HAVING COUNT(*) >= 2;

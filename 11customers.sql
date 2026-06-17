@@ -738,3 +738,26 @@ GROUP BY paid;
 SELECT first_name, last_name, paid
 FROM customers
 JOIN orders ON orders.customer_id = customers.id;
+
+-------------- Sorting ---------------
+SELECT *
+FROM products
+ORDER BY price, weight DESC;
+
+SELECT *
+FROM products
+ORDER BY name;
+
+-------------- OFFSET & LIMIT --------------
+SELECT * FROM customers
+OFFSET 40; -- Skip the first 40 rows of result set
+
+SELECT * FROM customers
+LIMIT 5; -- Only give the first 5 rows of the result set
+
+-------- LIMIT & ORDER together ----------
+SELECT * 
+FROM products
+ORDER BY price DESC
+LIMIT 20
+OFFSET 5;

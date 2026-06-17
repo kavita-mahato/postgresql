@@ -734,3 +734,7 @@ VALUES
 SELECT paid, COUNT(*)
 FROM orders
 GROUP BY paid;
+
+SELECT first_name, last_name, paid
+FROM customers
+JOIN orders ON orders.customer_id = customers.id;

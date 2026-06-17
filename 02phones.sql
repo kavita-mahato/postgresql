@@ -28,3 +28,10 @@ SELECT name, manufacturer FROM phones WHERE manufacturer IN ('Apple') OR manufac
 
 -- Calculate Total Revenue in the SELECT Clause
 SELECT name, price * units_sold AS total_revenue FROM phones WHERE price * units_sold > 1000000;
+
+
+---------------- Filtering Stack ------------------
+SELECT manufacturer, SUM(price * units_sold)
+FROM phones
+GROUP BY manufacturer
+HAVING SUM(price * units_sold) > 2000000;

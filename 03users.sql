@@ -88,3 +88,5 @@ FROM comments
 WHERE photo_id < 50
 GROUP BY user_id
 HAVING COUNT(*) >= 2;
+
+DROP TABLE users CASCADE;

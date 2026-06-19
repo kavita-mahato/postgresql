@@ -807,3 +807,12 @@ EXCEPT
 	ORDER BY price/weight DESC
 	LIMIT 5
 );
+
+----------------- Subquery -----------------
+SELECT name, price
+FROM products
+where price > (
+	SELECT MAX(price)
+	FROM products
+	WHERE department = 'Toys'
+);

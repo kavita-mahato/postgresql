@@ -829,3 +829,11 @@ SELECT name, price, (
 ) AS id_3_price
 FROM products
 WHERE price > 867;
+
+----------- Subqueries in FROM ------------
+SELECT name, price_weight_ratio
+FROM (
+	SELECT name, price / weight AS price_weight_ratio
+	FROM products
+) AS p
+WHERE price_weight_ratio > 50;

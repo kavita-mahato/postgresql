@@ -52,3 +52,9 @@ SELECT manufacturer
 FROM phones
 GROUP BY manufacturer
 HAVING COUNT(*) > 2;
+
+------------ Subquery Exercise --------------
+SELECT name, price, price / (
+    SELECT MAX(price) FROM phones
+) price_ratio
+FROM phones;

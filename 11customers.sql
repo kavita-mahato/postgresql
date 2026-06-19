@@ -791,3 +791,19 @@ INTERSECT
 	ORDER BY price/weight DESC
 	LIMIT 5
 );
+
+--------------- EXCEPT ---------------
+
+(
+	SELECT *
+	FROM products
+	ORDER BY price DESC
+	LIMIT 5
+)
+EXCEPT
+(
+	SELECT *
+	FROM products
+	ORDER BY price/weight DESC
+	LIMIT 5
+);

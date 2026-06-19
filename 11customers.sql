@@ -761,3 +761,18 @@ FROM products
 ORDER BY price DESC
 LIMIT 20
 OFFSET 5;
+
+--------------- Union ---------------
+(
+	SELECT * 
+	FROM products
+	ORDER BY price DESC
+	LIMIT 5
+)
+UNION ALL
+(
+	SELECT * 
+	FROM products
+	ORDER BY price/weight DESC
+	LIMIT 5
+);

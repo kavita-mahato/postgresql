@@ -776,3 +776,18 @@ UNION ALL
 	ORDER BY price/weight DESC
 	LIMIT 5
 );
+
+--------------- INTERSECTION ---------------
+(
+	SELECT * 
+	FROM products
+	ORDER BY price DESC
+	LIMIT 5
+)
+INTERSECT
+(
+	SELECT * 
+	FROM products
+	ORDER BY price/weight DESC
+	LIMIT 5
+);

@@ -42,3 +42,13 @@ FROM phones
 ORDER BY price DESC
 LIMIT 2
 OFFSET 1;
+
+------------ UNION Exercise ------------
+SELECT manufacturer
+FROM phones
+WHERE price < 170
+UNION
+SELECT manufacturer
+FROM phones
+GROUP BY manufacturer
+HAVING COUNT(*) > 2;

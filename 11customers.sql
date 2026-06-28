@@ -848,3 +848,11 @@ FROM (
 	FROM orders
 	GROUP BY customer_id
 ) AS p
+
+-------- Subqueries in JOIN Clause --------
+SELECT first_name
+FROM customers
+JOIN (
+	SELECT customer_id FROM orders WHERE product_id = 3
+) AS orders
+ON orders.customer_id = customers.id;

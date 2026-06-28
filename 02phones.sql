@@ -58,3 +58,11 @@ SELECT name, price, price / (
     SELECT MAX(price) FROM phones
 ) price_ratio
 FROM phones;
+
+----------- Exercise ------------
+SELECT MAX(p.avg_price) AS max_avg_price
+FROM (
+    SELECT AVG(price) AS avg_price
+    FROM phones
+    GROUP BY manufacturer
+) AS p

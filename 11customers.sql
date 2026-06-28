@@ -837,3 +837,14 @@ FROM (
 	FROM products
 ) AS p
 WHERE price_weight_ratio > 50;
+
+
+SELECT *
+FROM (SELECT MAX(price) FROM products) AS p;
+
+SELECT AVG(p.order_count)
+FROM (
+	SELECT customer_id, COUNT(*) AS order_count
+	FROM orders
+	GROUP BY customer_id
+) AS p

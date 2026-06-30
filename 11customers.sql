@@ -871,5 +871,13 @@ FROM orders
 WHERE product_id IN (
 	SELECT id
 	FROM products
-	WHERE price/weight > 5
-)
+	WHERE price/weight > 50
+);
+
+-------- Show the name of all products with a price greater than the average product price --------
+SELECT name
+FROM products
+WHERE price > (
+	SELECT AVG(price)
+	FROM products
+);

@@ -850,9 +850,26 @@ FROM (
 ) AS p
 
 -------- Subqueries in JOIN Clause --------
+-- (Any subquery that returns data compatible with the 'ON' clause)
 SELECT first_name
 FROM customers
 JOIN (
 	SELECT customer_id FROM orders WHERE product_id = 3
 ) AS orders
 ON orders.customer_id = customers.id;
+
+SELECT first_name
+FROM customers
+JOIN orders
+ON orders.customer_id = customers.id
+WHERE orders.product_id = 3
+
+
+-------------- Subqueries with WHERE -----------------
+SELECT id
+FROM orders
+WHERE product_id IN (
+	SELECT id
+	FROM products
+	WHERE price/weight > 5
+)

@@ -74,3 +74,12 @@ WHERE price > (
     SELECT price 
     FROM phones WHERE name = 'S5620 Monte'
 );
+
+-------------- Print name of all phones that have a price greater than any phone made by samsung -------------
+SELECT name
+FROM phones
+WHERE price > ALL (
+    SELECT price
+    FROM phones
+    WHERE manufacturer ='Samsung'
+);

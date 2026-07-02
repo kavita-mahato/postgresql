@@ -66,3 +66,11 @@ FROM (
     FROM phones
     GROUP BY manufacturer
 ) AS p
+
+----------- Print name and price of phones that have a price greater than the Samsung S5620 Monte ------------
+SELECT name, price
+FROM phones
+WHERE price > (
+    SELECT price 
+    FROM phones WHERE name = 'S5620 Monte'
+);

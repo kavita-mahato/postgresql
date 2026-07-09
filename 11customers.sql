@@ -945,3 +945,21 @@ FROM products;
 --------- Exercise ---------
 SELECT COUNT(DISTINCT manufacturer)
 FROM phones;
+
+--------- GREATEST ----------
+SELECT name, weight, GREATEST(30, 2*weight)
+FROM products;
+
+----------- LEAST ------------
+SELECT name, price, LEAST(price * 0.5, 400)
+FROM products;
+
+---------- CASE -----------
+SELECT 
+	name, price,
+	CASE
+		WHEN price > 600 THEN 'high'
+		WHEN price > 300 THEN 'medium'
+		ELSE 'cheap'
+	END
+FROM products;

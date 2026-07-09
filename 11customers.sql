@@ -931,3 +931,9 @@ SELECT (
 ), (
 	SELECT AVG(price) FROM products
 );
+
+--------------- Using subqueries, print the max price, and average price of all phones. Rename each column to max_price, min_price, avg_price ----------------
+SELECT 
+	(SELECT MAX(price) FROM phones) AS max_price,
+	(SELECT MIN(price) FROM phones) AS min_price,
+	(SELECT AVG(price) FROM phones) AS avg_price;

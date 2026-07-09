@@ -908,3 +908,19 @@ WHERE price > SOME (
 	FROM products
 	WHERE department = 'Industrial'
 ); 
+
+----------- Corelated subqueries -------------
+SELECT name, department, price
+FROM products AS P1
+WHERE p1.price > ALL (
+	SELECT MAX(price)
+	FROM products AS p2
+	WHERE p2.department = 'Industrial'
+)
+
+SELECT p1.name, (
+	SELECT COUNT(*)
+	FROM orders AS o1
+	WHERE o1.product_id = p1.id
+) AS num_orders
+FROM products AS p1

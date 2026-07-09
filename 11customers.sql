@@ -937,3 +937,11 @@ SELECT
 	(SELECT MAX(price) FROM phones) AS max_price,
 	(SELECT MIN(price) FROM phones) AS min_price,
 	(SELECT AVG(price) FROM phones) AS avg_price;
+
+--------- Selecting distinct values -----------
+SELECT COUNT(DISTINCT department)
+FROM products;
+
+--------- Exercise ---------
+SELECT COUNT(DISTINCT manufacturer)
+FROM phones;
